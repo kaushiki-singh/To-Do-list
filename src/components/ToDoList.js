@@ -21,7 +21,7 @@ const ToDoList = (props) => {
         <>
         <div className="todo-styles">
 
-        <button className="buttonDelete"
+        <button className="delete"
          onClick={() => {
              props.onSelectDelete(props.id)}}>
                  Delete</button>
@@ -48,7 +48,7 @@ const ToDoList = (props) => {
         ) : (
            
         
-        <button className="buttonEdit"
+        <button className="edit"
          onClick={EditItem}>
                  Edit</button>
         )}

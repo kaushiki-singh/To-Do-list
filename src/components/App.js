@@ -1,18 +1,20 @@
-import React, {useState} from 'react';
-import './App.css';
+import React, {useState} from "react";
+import "./../styles/App.css";
 import ToDoList from './ToDoList';
 
-const App = () => {
-  const [item, setItem] = useState("");
+function App() 
+{
+	const [item, setItem] = useState("");
   const [displayItem, setDisplayItem] = useState([]);
 
   const inputEvent = (event) => {
     setItem(event.target.value);
   }
   const addToList = () => {
+    if(item !== ""){
     setDisplayItem((oldItems) => {
       return [...oldItems, item];
-    });
+    });}
     setItem("");
   }
 
@@ -36,14 +38,14 @@ const App = () => {
  }
   
   }
-
-  return (
-    <div className = "main_div">
+	return (
+	<div id="main">
+	<div className = "main_div">
       <div className = "center-div">
         <br />
         <h1>ToDo List</h1>
         <br/>
-        <textarea id = "task" type="text" placeholder="add items" onChange={inputEvent} value={item}/>
+        <textarea id = "task" type="text" placeholder="Add items" onChange={inputEvent} value={item}/>
         <button id="btn" onClick={addToList}>+</button>
 
         <ol>
@@ -63,8 +65,9 @@ const App = () => {
       </div>
 
     </div>
-
-  );
+	</div>
+	);
 }
+
 
 export default App;
